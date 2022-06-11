@@ -1,0 +1,22 @@
+button {
+	margin: 5px;
+	
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+.categorias {
+		
+		display: flex;
+		justify-content: center;
+		
+		
+}
+
+.clickeado {
+	color: purple;
+}
+.noClickleado {
+	color: black;
+}
