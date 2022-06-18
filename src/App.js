@@ -4,10 +4,16 @@ import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import ItemDetailContainer from './components/ItemDetailContainer';
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import { useState,createContext } from 'react'
+import { CartProvider } from './context/CartContext'
+  
+  
+
 function App() {
-  // const [page,setPage] = useState("list")
+  
   return (
     <div className="App">
+      <CartProvider>
       <BrowserRouter>
       <NavBar />
       <Routes>
@@ -16,17 +22,9 @@ function App() {
         <Route path="/detail/:productId" element = {<ItemDetailContainer />} />
       </Routes>
       </BrowserRouter>
+      </CartProvider>
     </div>
-    /*<div className="App">
-      <div>
-        <button  onClick={() => setPage("list")}>List</button>
-        <button onClick={() => setPage("detail")}>Details</button>
-        </div>
-        <NavBar />
-       {page == "list" && <ItemListContainer saludo='Bienvenidos a BuenLibro'/>}
-        {page == "detail" && <ItemDetailContainer />}
-      
-    </div>*/
+    
   );
 }
 
