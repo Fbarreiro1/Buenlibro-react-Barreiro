@@ -1,3 +1,4 @@
+import React  from 'react';
 import fotoLibro from './images/fotoLibro.png';
 import "./styles/NavBar.css"
 	import CartWidget from './CartWidget'

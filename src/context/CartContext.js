@@ -1,3 +1,4 @@
+import React  from 'react';
 import { useState, useEffect, createContext } from "react"
 
 const CartContext = createContext()
@@ -31,15 +32,9 @@ export const CartProvider = ({ children }) => {
         return cart.some(prod => prod.id === id)
     }
 
-    // const getCartQuantity = () => {
-    //     let totalQuantity = 0
-
-    //     cart.forEach(prod => {
-    //         totalQuantity += prod.quantity
-    //     })
-
-    //     return totalQuantity
-    // }
+    const clearCart = () => {
+        setCart([])
+    }
 
     return (
         <CartContext.Provider value={{ 
@@ -48,7 +43,7 @@ export const CartProvider = ({ children }) => {
             addItem,
             removeItem,
             isInCart,
-            // getCartQuantity
+            clearCart
         }}>
             { children }
         </CartContext.Provider>
